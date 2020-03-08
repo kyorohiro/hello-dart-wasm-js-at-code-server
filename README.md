@@ -3,9 +3,9 @@ Coder Server 's develop environment  for mbed TLS
 
 # preperation
 
-Get code-server-3.0.0-linux-x86_64.tar.gz from https://github.com/cdr/code-server/releases/download/3.0.0/code-server-3.0.0-linux-x86_64.tar.gz
+Get code-server-3.0.0-linux-x86_64.tar.gz from https://github.com/cdr/code-server/releases/download/3.0.0/code-server-3.0.0-linux-x86_64.tar.gz  And copy to app/build_resource/code-server-3.0.0-linux-x86_64.tar.gz
 
-Get mbedtls-2.16.5-apache.tgz from https://tls.mbed.org/download/start/mbedtls-2.16.5-apache.tgz
+Get mbedtls-2.16.5-apache.tgz from https://tls.mbed.org/download/start/mbedtls-2.16.5-apache.tgz And copy to app/build_resource/mbedtls-2.16.5-apache.tgz
 
 [ref]
 https://github.com/cdr/code-server/releases
