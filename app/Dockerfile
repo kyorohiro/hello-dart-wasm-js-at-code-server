@@ -19,7 +19,7 @@ RUN apt-get install python3 -y
 COPY ./build_resource/mbedtls-2.16.5-apache.tgz /works/mbedtls-2.16.5-apache.tgz
 RUN tar zxf mbedtls-2.16.5-apache.tgz
 WORKDIR /works/mbedtls-2.16.5/build
-RUN cmake ..
+RUN cmake -DUSE_SHARED_MBEDTLS_LIBRARY=On -DUSE_STATIC_MBEDTLS_LIBRARY=Off ..
 RUN make
 RUN make install
 
