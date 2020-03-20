@@ -32,8 +32,8 @@ on code-server's terminal
 
 ```
 $ bash
-$ gcc main_hash.c -lmbedtls -lmbedcrypto -lmbedx509
-$ ./a.out
+$ emcc main_hash.c /works/mbedtls-2.16.5/library/libmbedcrypto.a -I /works/mbedtls-2.16.5/include/
+$ node a.out.js  
 ..
 ..
 ```

@@ -4,8 +4,8 @@
 //
 #include<stdio.h>
 #include "mbedtls/md5.h"
-#include "mbedtls/sha256.h"
-#include "mbedtls/platform.h"
+//#include "mbedtls/sha256.h"
+//#include "mbedtls/platform.h"
 int main(int argc, char const *argv[])
 {
     {
@@ -13,10 +13,11 @@ int main(int argc, char const *argv[])
     unsigned char digest[16];
     mbedtls_md5_ret((unsigned char*)"hello",3, digest);
     for(int i=0;i<16;i++){
-        mbedtls_printf("%02x",digest[i]);
+        printf("%02x",digest[i]);
     }
-    mbedtls_printf("\n");
+    printf("\n");
     }
+    /*
     {
     printf("SHA256\n");
     unsigned char digest[32];
@@ -25,5 +26,5 @@ int main(int argc, char const *argv[])
         mbedtls_printf("%02x",digest[i]);
     }
     mbedtls_printf("\n");
-    }
+    }*/
 }
