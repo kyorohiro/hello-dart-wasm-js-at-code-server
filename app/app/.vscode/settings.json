@@ -1,5 +1,7 @@
 {
-    "files.associations": {
-        "types.h": "c"
-    }
+    "C_Cpp.default.includePath": [
+        "/works/wasm/emsdk/upstream/emscripten/system/include",
+        "/works/wasm/emsdk/upstream/emscripten/system/include/libc",
+        "/works/wasm/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten/"
+    ]
 }

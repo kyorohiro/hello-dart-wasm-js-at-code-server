@@ -28,10 +28,23 @@ RUN apt install -y nodejs npm
 
 # install embedtls
 WORKDIR /works
-COPY ./build_resource/mbedtls-2.16.5-apache.tgz /works/mbedtls-2.16.5-apache.tgz
-RUN tar zxf mbedtls-2.16.5-apache.tgz
-WORKDIR /works/mbedtls-2.16.5
-RUN emmake make
+#COPY ./build_resource/mbedtls-2.16.5-apache.tgz /works/mbedtls-2.16.5-apache.tgz
+#RUN tar zxf mbedtls-2.16.5-apache.tgz
+#WORKDIR /works/mbedtls-2.16.5
+#RUN emmake make
+
+# install Dart
+RUN apt-get update
+RUN apt-get install -y wget gnupg1
+RUN apt-get install apt-transport-https
+RUN sh -c 'wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -'
+RUN sh -c 'wget -qO- https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list'
+RUN apt-get update
+RUN apt-get -y install dart
+RUN /works/code-server --install-extension Dart-Code.dart-code
+
+ENV PATH=${PATH}:/lib/dart/bin
+ENV PATH="${PATH}:/root/.pub-cache/bin"
 
 
 CMD ["/works/code-server", "--auth","none", "--host","0.0.0.0","--port","8443", "/app"]

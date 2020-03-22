@@ -32,9 +32,12 @@ on code-server's terminal
 
 ```
 $ bash
-$ emcc main_hash.c /works/mbedtls-2.16.5/library/libmbedcrypto.a -I /works/mbedtls-2.16.5/include/
-$ node a.out.js  
-..
-..
+$ cd libc
+$ emcc -s EXPORTED_FUNCTIONS="['_hello','_sum','_create_buffer','_destroy_buffer','_sum_double']" -s EXTRA_EXPORTED_RUNTIME_METHODS='["ccall", "cwrap"]' hello.c -o hello.js
+$ cp hello.wasm ../web/hello.wasm 
+$ cp hello.js ../web/hello.js
+$ cd ..
+$ pub global activate webdev
+$ webdev serve --hostname=0.0.0.0 
 ```
 
